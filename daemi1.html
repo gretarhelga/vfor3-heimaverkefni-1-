@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		a{
+			text-decoration: none;
+			color: black;
+			font-size: 22px;
+		}
+		.redClass{
+			color: #FF6347;
+		}
+		input[type=text] {
+			width: 20%;
+			box-sizing: border-box;
+			border:none;
+			outline-width: 0;
+			border-bottom: 2px solid #D3D3D3;
+		}
+		input[type=text]:focus{
+			border-bottom: 2px solid #FF6347;
+		}
+
+
+	</style>
+</head>
+<body>
+
+
+	<div id="app">
+		<input type="text" v-model="leita"><br><br>
+
+		<a v-bind:class="leita !== '' ? 'redClass' : '' " target=”_blank” v-bind:href="url + leita">Leita</a>
+
+
+	</div>
+
+	<script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript">
+		
+		var app = new Vue({
+			el: "#app",
+			data:{
+				leita: "",
+				url: "http://www.google.com/search?q="
+			}
+		});
+	</script>
+</body>
+</html>

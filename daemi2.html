@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		input[type=text] {
+			width: 20%;
+			box-sizing: border-box;
+			border:none;
+			outline-width: 0;
+			border-bottom: 2px solid #D3D3D3;
+		}
+		input[type=text]:focus{
+			border-bottom: 2px solid #FF6347;
+		}
+		button{
+			color: white;
+			background-color: #1E90FF;
+			padding: 7px;
+			border: none;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="app">
+
+		<form action="http://www.google.com/search" method="GET" target="_blank">
+			<input  type="hidden" name="q" v-bind:value="leita">
+			<input type="text" v-model="leita"><br><br>
+			<button type="submit">Submit</button>
+		</form>
+
+	</div>
+
+	<script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript">
+		
+		var app = new Vue({
+			el: "#app",
+			data:{
+				leita: ""
+			}
+		});
+	</script>
+</body>
+</html>
